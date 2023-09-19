@@ -5,6 +5,7 @@
              Title="GameOverPage"
              xmlns:local="clr-namespace:facade"
              x:DataType="local:MainPageViewModel"
+             BackgroundColor="LightBlue"
              >
     <VerticalStackLayout VerticalOptions="Center">
         <Button
@@ -19,10 +20,12 @@
             BorderWidth="2"
             />
             
-        <Image Source="Resources/Images/sad.png"
-               WidthRequest="250"/>
+        <Image Source="Resources/Images/frownyfacetransparent.png"
+               WidthRequest="250"
+               Margin="20"
+               BackgroundColor="Transparent"/>
 
-        <Grid Padding="12,25,12,36" Grid.Row="2" RowSpacing="12" ColumnSpacing="12" BackgroundColor="White" >
+        <Grid Padding="12,25,12,36" Grid.Row="2" RowSpacing="12" ColumnSpacing="12" >
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
