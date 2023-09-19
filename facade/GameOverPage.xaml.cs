@@ -21,17 +21,22 @@ public partial class GameOverPage : ContentPage
 		}
 	}
 
-	//private string result;
-	//public string Result {
-	//	get => result;
-	//	set
-	//	{
-	//		result = value;
-	//           ResultLabel.Text = "You " + result;
-	//       }
-	//}
+	private void Restart_Button_Clicked(object sender, EventArgs e)
+	{
+		Navigation.PushAsync(new MainPage());
+	}
 
-	public GameOverPage()
+    //private string result;
+    //public string Result {
+    //	get => result;
+    //	set
+    //	{
+    //		result = value;
+    //           ResultLabel.Text = "You " + result;
+    //       }
+    //}
+
+    public GameOverPage()
 	{
 		InitializeComponent();
 	}

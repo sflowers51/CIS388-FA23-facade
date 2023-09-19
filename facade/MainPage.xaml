@@ -16,34 +16,36 @@
 
             </Grid.RowDefinitions>
 
-
+            <Frame BorderColor="Black" BackgroundColor="#facade" Margin="15,25,15,25" Padding="15">
             <!--<RoundRectangle Grid.Row="0" Fill="#facade" CornerRadius="48" MaximumHeightRequest="150"/>-->
-            <StackLayout HorizontalOptions="Fill" BackgroundColor="#facade" Padding="8" Grid.Row="0" Orientation="Horizontal"  >
+                <StackLayout  Grid.Row="0" Orientation="Horizontal"  >
 
-                <Label Text="#" FontSize="60" VerticalOptions="Center" />
-                <Label Text="{Binding CurrentGuess}"
+                    <Label Text="#" FontSize="60" VerticalOptions="Center" />
+                    <Label Text="{Binding CurrentGuess}"
                        FontSize="60"
+                       
                        VerticalOptions="Center"
                        />
 
-            </StackLayout>
-
+                </StackLayout>
+            </Frame>
+            
             <CollectionView
                 ItemsSource="{Binding Guesses}">
-                <CollectionView.ItemTemplate>
+                <!--<CollectionView.ItemTemplate>
 
-                    <!--<Button Grid.Row="0"
+                    <Button Grid.Row="0"
                     Grid.Column="1"
                     Text="#fadedd"
                     BackgroundColor="#fadedd"
                     FontSize="16"
-                    IsEnabled="false "/>-->
+                    IsEnabled="false "/>
 
-                </CollectionView.ItemTemplate>
+                </CollectionView.ItemTemplate>-->
 
             </CollectionView>
 
-            <!--<Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
+            <Grid Padding="12" Grid.Row="1" RowSpacing="12" ColumnSpacing="12">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -99,9 +101,9 @@
                     FontSize="16"
                     IsEnabled="false "/>
 
-            </Grid>-->
+            </Grid>
 
-            <Grid Padding="12" Grid.Row="2" RowSpacing="12" ColumnSpacing="12">
+            <Grid Padding="12,12,12,36" Grid.Row="2" RowSpacing="12" ColumnSpacing="12" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -195,13 +197,12 @@
                 <Button Grid.Row="0"
                     Grid.Column="3"
                     Text="↑"
-                    WidthRequest="60"
-                    HeightRequest="60"
-                        CornerRadius="30"
+                    WidthRequest="80"
+                    HeightRequest="80"
                     BackgroundColor="#666"
                     TextColor="White"
                     Clicked="Button_Clicked"
-                    FontSize="32"
+                    FontSize="48"
                 >
                     <Button.Shadow>
                         <Shadow Brush="Gray"
@@ -213,13 +214,24 @@
                 <Button Grid.Row="1"
                     Grid.Column="3"
                     Text="⌫"
-                    WidthRequest="60"
-                    HeightRequest="60"
-                    BackgroundColor="Transparent"
-                    TextColor="#333"
-                    BorderWidth="0"
-                    FontSize="36"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    BackgroundColor="#666"
+                    TextColor="White"
+                    FontSize="48"
                 />
+
+                <!--Grid.Column="2"
+                    Text="F"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    BackgroundColor="#666"
+                    TextColor="White"
+
+                    FontSize="48"
+
+                    Command="{Binding AddLetterCommand}"
+                    CommandParameter="F"-->
 
 
             </Grid>

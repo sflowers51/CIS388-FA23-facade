@@ -2,13 +2,58 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="facade.GameOverPage"
-             Title="GameOverPage">
-    <VerticalStackLayout>
-        <Label
+             Title="GameOverPage"
+             xmlns:local="clr-namespace:facade"
+             x:DataType="local:MainPageViewModel"
+             >
+    <VerticalStackLayout VerticalOptions="Center">
+        <Button
             x:Name="ResultLabel"
-            Text="{Binding Result}"
-            FontSize="Title"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="You Lost!"
+            FontSize="50"
+            Padding="48,48,48,48"
+            BackgroundColor="#facade"
+            WidthRequest="320"
+            IsEnabled="False"
+            BorderColor="Black"
+            BorderWidth="2"
+            />
+            
+        <Image Source="Resources/Images/sad.png"
+               WidthRequest="250"/>
+
+        <Grid Padding="12,25,12,36" Grid.Row="2" RowSpacing="12" ColumnSpacing="12" BackgroundColor="White" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Home"
+                    TextColor="Black"
+                    Grid.Column="0"
+                    FontSize="30"
+                    WidthRequest="150"
+                    HeightRequest="75"
+                    BorderColor="Black"
+                    BorderWidth="5"
+                    BackgroundColor="White"/>
+
+            <Button Text="Restart"
+                    TextColor="Black"
+                    Grid.Column="1"
+                    FontSize="30"
+                    WidthRequest="150"
+                    HeightRequest="75"
+                    BorderColor="Black"
+                    BorderWidth="5"
+                    BackgroundColor="White"
+                    
+                    Clicked="Restart_Button_Clicked"/>
+
+
+        </Grid>
+
+
     </VerticalStackLayout>
 </ContentPage>
