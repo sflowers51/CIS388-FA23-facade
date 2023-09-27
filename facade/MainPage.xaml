@@ -33,16 +33,24 @@
             
             <CollectionView
                 ItemsSource="{Binding Guesses}">
-                <!--<CollectionView.ItemTemplate>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="3"/>
+                    
+                    
+                </CollectionView.ItemsLayout>
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="local:ColorGuess">
 
-                    <Button Grid.Row="0"
-                    Grid.Column="1"
-                    Text="#fadedd"
-                    BackgroundColor="#fadedd"
-                    FontSize="16"
-                    IsEnabled="false "/>
-
-                </CollectionView.ItemTemplate>-->
+                        <Button
+                        Text="{Binding Guess}"
+                        BackgroundColor="{Binding Color}"
+                        FontSize="16"
+                        IsEnabled="false "/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
 
             </CollectionView>
 
@@ -201,7 +209,7 @@
 
                     FontSize="48"
 
-                    Command="{Binding AddLetterCommand}"
+                    Command="{Binding GuessCommand}"
                     CommandParameter="F"
                 />
                 <Button Grid.Row="2"

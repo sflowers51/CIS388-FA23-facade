@@ -10,7 +10,7 @@
     <VerticalStackLayout VerticalOptions="Center">
         <Button
             x:Name="ResultLabel"
-            Text="You Lost!"
+            Text="hAHAHAHAHA"
             FontSize="50"
             Padding="48,48,48,48"
             BackgroundColor="#facade"
