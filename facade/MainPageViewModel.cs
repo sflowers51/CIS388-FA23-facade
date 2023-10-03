@@ -3,21 +3,23 @@ using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-
 namespace facade
 {
-	public partial class MainPageViewModel: ObservableObject 
+	public partial class MainPageViewModel: ObservableObject
 	{
+		[ObservableProperty]
+		private string backColor; 
+
 		[ObservableProperty]
 		private string secretColor;
 
 		[ObservableProperty]
 		private string currentGuess;
 
+		[ObservableProperty]
+		private string color;
 
 		public ObservableCollection<ColorGuess> Guesses { get; set; }
-
-		//public string SecretColor { get; set; }
 
 		public MainPageViewModel()
 		{
@@ -27,7 +29,7 @@ namespace facade
 			//call the constructor 
 			Guesses = new ObservableCollection<ColorGuess>();
 
-
+			
 		}
 
 
@@ -54,14 +56,9 @@ namespace facade
 		void Guess()
 		{
             GameOverPage gameOverPage = new GameOverPage();
-/*
-            if (string.IsNullOrWhiteSpace(CurrentGuess))
-            {
-				// Show a message box when CurrentGuess is empty
-				
-            }*/
-            // if correct, then go to game over (DidWin=true)
-            if (CurrentGuess == SecretColor)
+
+			// if correct, then go to game over (DidWin=true)
+			if (CurrentGuess == SecretColor)
 			{
 				gameOverPage.DidWin = true;
                 Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={gameOverPage.DidWin}");
@@ -76,9 +73,9 @@ namespace facade
 	
 			if(CurrentGuess != "" && CurrentGuess.Length == 6)
 			{
-            // Add this guess to the Guesses
-            Guesses.Add(new ColorGuess(CurrentGuess));
-			CurrentGuess = "";
+				// Add this guess to the Guesses
+				Guesses.Add(new ColorGuess(CurrentGuess));
+				CurrentGuess = "";
 			}
 
 

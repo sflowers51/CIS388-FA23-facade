@@ -10,7 +10,11 @@ public partial class GameOverPage : ContentPage
 		set
 		{
 			didWin = value;
-			if(didWin)
+            MainPageViewModel mainPageViewModel = new MainPageViewModel();
+
+            revealColor.Text = mainPageViewModel.SecretColor;
+
+            if (didWin)
 			{
 				ResultLabel.Text = "You Won!";
                 ImageLable.Source = "happyface.png";
