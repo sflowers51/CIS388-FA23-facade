@@ -7,10 +7,11 @@
              x:DataType="local:MainPageViewModel"
              BackgroundColor="LightBlue"
              >
-    <VerticalStackLayout VerticalOptions="Center">
+    <VerticalStackLayout VerticalOptions="Center" >
+
         <Button
             x:Name="ResultLabel"
-            Text="hAHAHAHAHA"
+            Text="{Binding GuessCommand}"
             FontSize="50"
             Padding="48,48,48,48"
             BackgroundColor="#facade"
@@ -18,12 +19,78 @@
             IsEnabled="False"
             BorderColor="Black"
             BorderWidth="2"
-            />
             
-        <Image Source="Resources/Images/frownyfacetransparent.png"
-               WidthRequest="250"
-               Margin="20"
-               BackgroundColor="Transparent"/>
+            />
+
+        <Grid Margin="20" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Text="Secret Color:"
+                Grid.Column="0"
+                BorderColor="Transparent"
+                BorderWidth="0"
+                BackgroundColor="Transparent"
+                FontSize="25"
+                TextColor="Black"
+                HorizontalOptions="End"
+                IsEnabled="False"
+            />
+
+            <Button
+                Text="FACADE"
+                Grid.Column="1"
+                BorderColor="Transparent"
+                BorderWidth="0"
+                BackgroundColor="Transparent"
+                FontSize="25"
+                TextColor="Black"
+                HorizontalOptions="Center"
+                IsEnabled="False"
+            />
+        </Grid>
+
+        <Grid Margin="5" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Text="Attempts:"
+                Grid.Column="0"
+                BorderColor="Transparent"
+                BorderWidth="0"
+                BackgroundColor="Transparent"
+                FontSize="25"
+                TextColor="Black"
+                HorizontalOptions="End"
+                IsEnabled="False"
+            />
+
+            <Button
+                x:DataType="local:MainPageViewModel"
+                Text="{Binding Guesses.Count}"
+                Grid.Column="1"
+                BorderColor="Transparent"
+                BorderWidth="0"
+                BackgroundColor="Transparent"
+                FontSize="25"
+                TextColor="Black"
+                HorizontalOptions="Center"
+                IsEnabled="False"
+            />
+        </Grid>
+
+        <Image 
+            x:Name="ImageLable" 
+            Source="{Binding GuessCommand}"
+            WidthRequest="200"
+            Margin="20"
+            BackgroundColor="Transparent"/>
 
         <Grid Padding="12,25,12,36" Grid.Row="2" RowSpacing="12" ColumnSpacing="12" >
 

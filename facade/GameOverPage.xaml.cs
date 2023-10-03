@@ -13,11 +13,13 @@ public partial class GameOverPage : ContentPage
 			if(didWin)
 			{
 				ResultLabel.Text = "You Won!";
+                ImageLable.Source = "happyface.png";
 			}
 			else
 			{
 				ResultLabel.Text = "You Lost!";
-			}
+                ImageLable.Source = "frownyfacetransparent.png";
+            }
 		}
 	}
 
@@ -26,17 +28,18 @@ public partial class GameOverPage : ContentPage
 		Navigation.PushAsync(new MainPage());
 	}
 
-    //private string result;
-    //public string Result {
-    //	get => result;
-    //	set
-    //	{
-    //		result = value;
-    //           ResultLabel.Text = "You " + result;
-    //       }
-    //}
+/*	private string result;
+	public string Result
+	{
+		get => result;
+		set
+		{
+			result = value;
+			result.text = "you " + result;
+		}
+	}*/
 
-    public GameOverPage()
+	public GameOverPage()
 	{
 		InitializeComponent();
 	}

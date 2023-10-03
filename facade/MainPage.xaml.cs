@@ -18,8 +18,11 @@ public partial class MainPage : ContentPage
 
     async void Button_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
-    }
+		await Shell.Current.GoToAsync($"{nameof(GameOverPage)}?DidWin={DidWin}");
+		/*		await Navigation.PushAsync(new GameOverPage());*/
+	}
+
+
 }
 
 
